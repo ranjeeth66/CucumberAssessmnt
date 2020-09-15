@@ -5,8 +5,9 @@ Feature: Validate JP Morgan logo in google search
     Given user launches browser
     Then user opens google homepage
     When user searches given data"<data_SearchWords>"
-    Then clicks on the first record and verifys the logo 
+    Then user clicks on the first record 
+    And verify the logo"<verify_title>"
 
     Examples: 
-      |data_SearchWords|
-      |J.P.Morgan Chase|
+      |data_SearchWords|verify_title|
+      |J.P.Morgan Chase|Home | JPMorgan Chase & Co.|

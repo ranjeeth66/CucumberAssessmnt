@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class Utility {
+	
+	public static int PAGE_LOAD_TIMEOUT = 30;
+	public static int IMPLICIT_WAIT = 20;
 	public static String getPropertiesFromConfig(String stKey)
 	{
 		String configData = null;

@@ -23,10 +23,13 @@ public class Steps {
 	public void user_searches_given_data(String value) throws Throwable {
 		googlePage.searchKeyword(value);
 	}
-
-	@Then("^clicks on the first record and verifys the logo$")
-	public void clicks_on_the_first_record_and_verifys_the_logo() throws Throwable {
-		boolean strLogoResult = googlePage.validateJPMCLogo(); 
-		Assert.assertTrue(strLogoResult);
+	@Then("^user clicks on the first record$")
+	public void user_clicks_on_the_first_record() throws Throwable {
+		googlePage.clickOnLink(); 
 	}
+	@Then("^verify the logo\"([^\"]*)\"$")
+	public void verify_the_logo(String value) throws Throwable {
+	    String strTitle = googlePage.validateJPMCPage();
+	    Assert.assertEquals(strTitle, value);
+	}   
 }
