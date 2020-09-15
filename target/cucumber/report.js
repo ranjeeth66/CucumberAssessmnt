@@ -1,14 +1,14 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("jpmlogo.feature");
 formatter.feature({
   "line": 2,
-  "name": "JP Morgan logo in google search",
+  "name": "Validate JP Morgan logo in google search",
   "description": "",
-  "id": "jp-morgan-logo-in-google-search",
+  "id": "validate-jp-morgan-logo-in-google-search",
   "keyword": "Feature",
   "tags": [
     {
       "line": 1,
-      "name": "@testForGoogleScenario"
+      "name": "@testgooglescenario"
     }
   ]
 });
@@ -16,7 +16,7 @@ formatter.scenarioOutline({
   "line": 4,
   "name": "Validate JP Morgan logo for searched results in google search results",
   "description": "",
-  "id": "jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results",
+  "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
@@ -32,48 +32,55 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "user searches JP Morgan \"\u003cdata_SearchWords\u003e\"",
+  "name": "user searches given data\"\u003cdata_SearchWords\u003e\"",
   "keyword": "When "
 });
 formatter.step({
   "line": 8,
-  "name": "click first JP Morgan url to verify logo",
+  "name": "user clicks on the first record",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 9,
+  "name": "verify the logo\"\u003cverify_title\u003e\"",
+  "keyword": "And "
+});
 formatter.examples({
-  "line": 10,
+  "line": 11,
   "name": "",
   "description": "",
-  "id": "jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;",
+  "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;",
   "rows": [
     {
       "cells": [
-        "data_SearchWords"
+        "data_SearchWords",
+        "verify_title"
       ],
-      "line": 11,
-      "id": "jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;1"
+      "line": 12,
+      "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;1"
     },
     {
       "cells": [
-        "J.P.Morgan Chase"
+        "J.P.Morgan Chase",
+        "Home JPMorgan Chase \u0026 Co."
       ],
-      "line": 12,
-      "id": "jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;2"
+      "line": 13,
+      "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 12,
+  "line": 13,
   "name": "Validate JP Morgan logo for searched results in google search results",
   "description": "",
-  "id": "jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;2",
+  "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 1,
-      "name": "@testForGoogleScenario"
+      "name": "@testgooglescenario"
     }
   ]
 });
@@ -89,7 +96,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "user searches JP Morgan \"J.P.Morgan Chase\"",
+  "name": "user searches given data\"J.P.Morgan Chase\"",
   "matchedColumns": [
     0
   ],
@@ -97,23 +104,63 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "click first JP Morgan url to verify logo",
+  "name": "user clicks on the first record",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.step({
+  "line": 9,
+  "name": "verify the logo\"Home JPMorgan Chase \u0026 Co.\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "Steps.user_launches_browser()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 26846062700,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "location": "Steps.user_opens_google_homepage()"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 129073000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "J.P.Morgan Chase",
+      "offset": 25
+    }
+  ],
+  "location": "Steps.user_searches_given_data(String)"
+});
+formatter.result({
+  "duration": 9019423600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Steps.user_clicks_on_the_first_record()"
+});
+formatter.result({
+  "duration": 27425411600,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Home JPMorgan Chase \u0026 Co.",
+      "offset": 16
+    }
+  ],
+  "location": "Steps.verify_the_logo(String)"
+});
+formatter.result({
+  "duration": 148714500,
+  "error_message": "org.junit.ComparisonFailure: expected:\u003cHome [| ]JPMorgan Chase \u0026 Co.\u003e but was:\u003cHome []JPMorgan Chase \u0026 Co.\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat stepDefinitions.Steps.verify_the_logo(Steps.java:33)\r\n\tat ✽.And verify the logo\"Home JPMorgan Chase \u0026 Co.\"(jpmlogo.feature:9)\r\n",
+  "status": "failed"
 });
 });

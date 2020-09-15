@@ -10,6 +10,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/Feature",
 		glue={"stepDefinitions"},
+		format = {"pretty", "html:target/cucumber"},
 		monochrome = true, 
 		dryRun = false, 
 		tags = {"@testgooglescenario"})

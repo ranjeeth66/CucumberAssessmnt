@@ -9,6 +9,7 @@ public class BaseClass{
 	public static WebDriver driver;	
 	public static String browser = Utility.getPropertiesFromConfig("Browser");
 	public static String chromePath = Utility.getPropertiesFromConfig("chromepath");
+	public static String iePath = Utility.getPropertiesFromConfig("internetExplorer");
 	public static WebDriver getDriver() {
 		switch(browser){
 		case "Chrome":
@@ -16,14 +17,14 @@ public class BaseClass{
 			driver = new ChromeDriver() ;
 			break;
 		case "IE":
-			System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\IEDriver.exe");
+			System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+iePath);
 			driver = new InternetExplorerDriver();
 			break;
 		case "Firefox":
 			driver = new FirefoxDriver() ;
 			break;
 		}
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		return driver;
 	}
 }

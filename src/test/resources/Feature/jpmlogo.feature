@@ -10,4 +10,4 @@ Feature: Validate JP Morgan logo in google search
 
     Examples: 
       |data_SearchWords|verify_title|
-      |J.P.Morgan Chase|Home | JPMorgan Chase & Co.|
+      |J.P.Morgan Chase|Home JPMorgan Chase & Co.|
