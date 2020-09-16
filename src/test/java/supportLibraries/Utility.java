@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class Utility {
+public class Utility{
 	
 	public static int PAGE_LOAD_TIMEOUT = 30;
 	public static int IMPLICIT_WAIT = 20;
@@ -22,5 +22,6 @@ public class Utility {
 		}
 		return configData;
 	}
-
+	
+	
 }

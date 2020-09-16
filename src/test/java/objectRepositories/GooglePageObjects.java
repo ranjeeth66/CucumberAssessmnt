@@ -1,7 +1,6 @@
 package objectRepositories;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import supportLibraries.BaseClass;
 import supportLibraries.Utility;
 
@@ -24,14 +22,12 @@ public class GooglePageObjects{
 		driver=BaseClass.getDriver();
 		PageFactory.initElements(driver, this);
 	}
-	
 	public void openBrowser() throws Exception{
 		String url = Utility.getPropertiesFromConfig("ApplicationUrl");
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Utility.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
-	
 	@FindBy(xpath = "//input[@name='q']")
 	private WebElement edtSearchLoct;
 	
@@ -45,6 +41,7 @@ public class GooglePageObjects{
 	
 	/********This Method is used verify google page is launched 
 	 * @return isResultDisplayed *****/
+	
 	public boolean googlePageValidation(){
 		boolean isResultDisplayed = false;
 		try{
@@ -67,14 +64,8 @@ public class GooglePageObjects{
 		wait.until(ExpectedConditions.presenceOfElementLocated(verifyPage));		
 	}
 	public String validateJPMCPage(){
-		try{
-			verify_Jpmclogo.isDisplayed();;
-		}catch(NoSuchElementException e){
-			e.printStackTrace();
-		}
+		verify_Jpmclogo.isDisplayed();
 		String strPageTitle = driver.getTitle();
  		return strPageTitle;
-		
-		
 	}
 }

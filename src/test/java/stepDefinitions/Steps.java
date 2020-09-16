@@ -2,12 +2,11 @@ package stepDefinitions;
 import org.junit.Assert;
 
 import objectRepositories.GooglePageObjects;
-import supportLibraries.BaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Steps extends BaseClass{
+public class Steps{
 	
 	GooglePageObjects googlePage = new GooglePageObjects();
 	
