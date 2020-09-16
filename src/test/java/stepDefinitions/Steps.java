@@ -29,6 +29,7 @@ public class Steps{
 	}
 	@Then("^verify the logo\"([^\"]*)\"$")
 	public void verify_the_logo(String value) throws Throwable {
+		Assert.assertTrue(googlePage.verify_Jpmclogo.isDisplayed());
 	    String strTitle = googlePage.validateJPMCPage();
 	    Assert.assertEquals(strTitle, value);
 	}

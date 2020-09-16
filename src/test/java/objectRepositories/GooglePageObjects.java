@@ -32,7 +32,7 @@ public class GooglePageObjects{
 	private WebElement edtSearchLoct;
 	
 	@FindBy(xpath = "//div[@class='logoContainer']/a")
-	private WebElement verify_Jpmclogo;
+	public WebElement verify_Jpmclogo;
 	
 	@FindBy(xpath = "//*[contains(text(),'Home | JPMorgan')]")
 	private WebElement lnk_Jpmorggan;
@@ -64,7 +64,6 @@ public class GooglePageObjects{
 		wait.until(ExpectedConditions.presenceOfElementLocated(verifyPage));		
 	}
 	public String validateJPMCPage(){
-		verify_Jpmclogo.isDisplayed();
 		String strPageTitle = driver.getTitle();
  		return strPageTitle;
 	}
