@@ -1,5 +1,7 @@
 package supportLibraries;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -26,4 +28,15 @@ public class BaseClass{
 		//driver.manage().window().maximize();
 		return driver;
 	}
+	public static boolean verifyElementExists(WebElement element){
+		boolean isResultDispayed = false;
+		try{
+			isResultDispayed = element.isDisplayed();
+		}catch(NoSuchElementException e){
+			e.printStackTrace();
+		}
+		return isResultDispayed;
+		
+	}
+	
 }

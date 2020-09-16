@@ -18,7 +18,8 @@ public class Utility{
 			properties.load(fis);
 			configData = properties.getProperty(stKey);
 		} catch (Exception e) {
-			System.out.println("getPropertiesFroConfig() method not executed"+e);
+			e.printStackTrace();
+			e.getMessage();
 		}
 		return configData;
 	}

@@ -3,7 +3,6 @@ package objectRepositories;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,16 +39,10 @@ public class GooglePageObjects{
 	By verifyPage = By.xpath("//div[@class='logoContainer']/a");
 	
 	/********This Method is used verify google page is launched 
-	 * @return isResultDisplayed *****/
+	 * @return *****/
 	
 	public boolean googlePageValidation(){
-		boolean isResultDisplayed = false;
-		try{
-			isResultDisplayed = edtSearchLoct.isDisplayed();
-		}catch(NoSuchElementException e){
-			e.printStackTrace();
-		}
- 		return isResultDisplayed;
+		return BaseClass.verifyElementExists(edtSearchLoct);
 	}
 	/********This Method is used to accept data to input in google search page *****/
 	public void searchKeyword(String KeyWord) throws InterruptedException{
