@@ -1,14 +1,15 @@
 package stepDefinitions;
 import org.junit.Assert;
 
-import objectRepositories.googlePage_Objects;
+import objectRepositories.GooglePage_Objects;
+import supportLibraries.BaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Steps {
+public class Steps extends BaseClass{
 	
-	googlePage_Objects googlePage = new googlePage_Objects();
+	GooglePage_Objects googlePage = new GooglePage_Objects();
 	
 	@Given("^user launches browser$")
 	public void user_launches_browser() throws Throwable {
@@ -31,5 +32,5 @@ public class Steps {
 	public void verify_the_logo(String value) throws Throwable {
 	    String strTitle = googlePage.validateJPMCPage();
 	    Assert.assertEquals(strTitle, value);
-	}   
-}
+	}
+}		

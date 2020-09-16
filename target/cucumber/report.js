@@ -62,7 +62,7 @@ formatter.examples({
     {
       "cells": [
         "J.P.Morgan Chase",
-        "Home JPMorgan Chase \u0026 Co."
+        "Home | JPMorgan Chase \u0026 Co."
       ],
       "line": 13,
       "id": "validate-jp-morgan-logo-in-google-search;validate-jp-morgan-logo-for-searched-results-in-google-search-results;;2"
@@ -109,7 +109,7 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "verify the logo\"Home JPMorgan Chase \u0026 Co.\"",
+  "name": "verify the logo\"Home | JPMorgan Chase \u0026 Co.\"",
   "matchedColumns": [
     1
   ],
@@ -119,14 +119,14 @@ formatter.match({
   "location": "Steps.user_launches_browser()"
 });
 formatter.result({
-  "duration": 26846062700,
+  "duration": 27774600500,
   "status": "passed"
 });
 formatter.match({
   "location": "Steps.user_opens_google_homepage()"
 });
 formatter.result({
-  "duration": 129073000,
+  "duration": 122438100,
   "status": "passed"
 });
 formatter.match({
@@ -139,28 +139,27 @@ formatter.match({
   "location": "Steps.user_searches_given_data(String)"
 });
 formatter.result({
-  "duration": 9019423600,
+  "duration": 11675814400,
   "status": "passed"
 });
 formatter.match({
   "location": "Steps.user_clicks_on_the_first_record()"
 });
 formatter.result({
-  "duration": 27425411600,
+  "duration": 18149454900,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Home JPMorgan Chase \u0026 Co.",
+      "val": "Home | JPMorgan Chase \u0026 Co.",
       "offset": 16
     }
   ],
   "location": "Steps.verify_the_logo(String)"
 });
 formatter.result({
-  "duration": 148714500,
-  "error_message": "org.junit.ComparisonFailure: expected:\u003cHome [| ]JPMorgan Chase \u0026 Co.\u003e but was:\u003cHome []JPMorgan Chase \u0026 Co.\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat stepDefinitions.Steps.verify_the_logo(Steps.java:33)\r\n\tat ✽.And verify the logo\"Home JPMorgan Chase \u0026 Co.\"(jpmlogo.feature:9)\r\n",
-  "status": "failed"
+  "duration": 69434900,
+  "status": "passed"
 });
 });

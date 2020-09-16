@@ -15,11 +15,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import supportLibraries.BaseClass;
 import supportLibraries.Utility;
 
-public class googlePage_Objects{
+public class GooglePage_Objects{
 	
 	public WebDriver driver;
 	
-	public googlePage_Objects(){
+	public GooglePage_Objects(){
 		
 		driver=BaseClass.getDriver();
 		PageFactory.initElements(driver, this);
@@ -50,7 +50,7 @@ public class googlePage_Objects{
 		try{
 			isResultDisplayed = edtSearchLoct.isDisplayed();
 		}catch(NoSuchElementException e){
-			System.out.println("Element is not displayed");
+			e.printStackTrace();
 		}
  		return isResultDisplayed;
 	}
@@ -68,9 +68,9 @@ public class googlePage_Objects{
 	}
 	public String validateJPMCPage(){
 		try{
-			boolean	is_LogoDisplay = verify_Jpmclogo.isDisplayed();;
+			verify_Jpmclogo.isDisplayed();;
 		}catch(NoSuchElementException e){
-			System.out.println("Element is not displayed");
+			e.printStackTrace();
 		}
 		String strPageTitle = driver.getTitle();
  		return strPageTitle;
