@@ -15,11 +15,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import supportLibraries.BaseClass;
 import supportLibraries.Utility;
 
-public class GooglePage_Objects{
+public class GooglePageObjects{
 	
 	public WebDriver driver;
 	
-	public GooglePage_Objects(){
+	public GooglePageObjects(){
 		
 		driver=BaseClass.getDriver();
 		PageFactory.initElements(driver, this);

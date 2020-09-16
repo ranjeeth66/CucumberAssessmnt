@@ -1,7 +1,7 @@
 package stepDefinitions;
 import org.junit.Assert;
 
-import objectRepositories.GooglePage_Objects;
+import objectRepositories.GooglePageObjects;
 import supportLibraries.BaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 
 public class Steps extends BaseClass{
 	
-	GooglePage_Objects googlePage = new GooglePage_Objects();
+	GooglePageObjects googlePage = new GooglePageObjects();
 	
 	@Given("^user launches browser$")
 	public void user_launches_browser() throws Throwable {
