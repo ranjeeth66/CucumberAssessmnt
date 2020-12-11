@@ -119,14 +119,14 @@ formatter.match({
   "location": "Steps.user_launches_browser()"
 });
 formatter.result({
-  "duration": 10360749800,
+  "duration": 9021024500,
   "status": "passed"
 });
 formatter.match({
   "location": "Steps.user_opens_google_homepage()"
 });
 formatter.result({
-  "duration": 112645300,
+  "duration": 141110900,
   "status": "passed"
 });
 formatter.match({
@@ -139,14 +139,14 @@ formatter.match({
   "location": "Steps.user_searches_given_data(String)"
 });
 formatter.result({
-  "duration": 3072221600,
+  "duration": 1210777600,
   "status": "passed"
 });
 formatter.match({
   "location": "Steps.user_clicks_on_the_first_record()"
 });
 formatter.result({
-  "duration": 5481925400,
+  "duration": 8828529800,
   "status": "passed"
 });
 formatter.match({
@@ -159,7 +159,7 @@ formatter.match({
   "location": "Steps.verify_the_logo(String)"
 });
 formatter.result({
-  "duration": 54409700,
+  "duration": 131003700,
   "status": "passed"
 });
 });

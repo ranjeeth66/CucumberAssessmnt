@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true, 
 		dryRun = false, 
 		tags = {"@testgooglescenario"})
-public class Runner extends BaseClass{
+public class Runner {
 
 	@BeforeClass
 	public static void  setup() {
@@ -22,6 +22,6 @@ public class Runner extends BaseClass{
 	}
 	@AfterClass
 	public static void teardown(){
-		driver.quit();
+		this.driver.quit();
 	}
 }
